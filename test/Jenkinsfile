@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+    tools {
+        maven 'Maven-3'
+    }
+    stages {
+        stage('Clean') {
+            steps {
+                git url: 'https://github.com/salvadorcuray/empty-login.git', branch: 'develop'   
+                sh 'mvn clean'
+            }
+        }
+        stage ('Test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+        stage ('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('sonarqube-server') {
+                    sh 'mvn verify sonar:sonar -Dsonar.projectKey=login-prueba -Dsonar.projectName=login'
+                }
+            }
+        }        
+        stage('Package') {
+            steps {
+                sh 'mvn package -Dmaven.test.skip=true'
+            }
+        }
+    }
+}
+
