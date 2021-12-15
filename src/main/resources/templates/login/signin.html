@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="fragments/references"/>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+    <title>Good and Cheap</title>
+</head>
+<body>
+<!-- Header -->
+<header th:replace="fragments/header :: headerbar"></header>
+<!-- Main -->
+<main>
+    <section class="center">
+        <div class="btn_login center">
+            <p onclick="location.href = '/signin';" class="sign_in">SIGN IN</p>
+            <p onclick="location.href = '/signup';" class="sign_up">SIGN UP</p>
+        </div>
+    </section>
+
+    <form class="d-grid gap-4 col-10 mx-auto ">
+        <!-- Email input -->
+        <div class="form-group input-group-lg">
+            <input type="email" class="form-control icon-form-email" id="inputEmail" name="email" placeholder="Email">
+        </div>
+        <!-- Password input -->
+        <div class="form-group input-group-lg">
+            <input type="password" class="form-control icon-form-pwd" name="password" id="inputPassword" placeholder="******">
+        </div>
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-dark">SUBMIT</button>
+    </form>
+
+</main>
+
+<!-- Footer -->
+<footer th:replace="fragments/footer :: footer"></footer>
+</body>
+</html>
