@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="fragments/references"/>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Good and Cheap</title>
+</head>
+<body>
+    <!-- Header -->
+    <header th:replace="fragments/header :: headerbar"></header>
+    <!-- Main -->
+    <main>
+        <section class="center">
+            <img class="img_banner" th:src="@{/assets/images/index_banner_small.jpg}" alt="Banner">
+            <p class="explanation">Good & Cheap is an innovative project created to improve the environment by reducing food waste.</p>
+            <div class="btn_login center">
+                <p onclick="location.href = '/signin';" class="sign_in">SIGN IN</p>
+                <p onclick="location.href = '/signup';" class="sign_up">SIGN UP</p>
+            </div>
+        </section>
+        <hr>
+
+        <section class="cards_right center">
+
+            <img class="img_section right" th:src="@{/assets/images/index_recipe.png}" alt="Banner">
+            <p class="explanation">If you are wondering what to do with all these amazing products, check the recipes posted by our community.</p>
+            <button onclick="location.href = '#';" class="card_button center">Recipe List</button>
+        </section>
+        <hr>
+
+        <section class="cards center">
+
+            <img class="img_section" th:src="@{/assets/images/index_analytics.png}" alt="Banner">
+            <p class="explanation">If you want to know how your community is helping, check our application analytics.</p>
+            <button onclick="location.href = '#';" class="card_button center">Analytics</button>
+        </section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer th:replace="fragments/footer :: footer"></footer>
+</body>
+</html>

@@ -1,0 +1,17 @@
+:root {
+    --form-icon-position:99%;
+    --form-button-submit-size:70%;
+}
+
+/*-- form  sign in--*/
+.icon-form-email {
+    background: url("../assets/icon/icon_form_email.svg") no-repeat var(--form-icon-position);
+}
+
+  .icon-form-pwd {
+      background: url("../assets/icon/icon_form_pwd.svg") no-repeat var(--form-icon-position);
+  }
+
+.custom-btn-submit{
+   width: var(--form-button-submit-size);
+}
