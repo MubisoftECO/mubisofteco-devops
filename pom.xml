@@ -61,7 +61,7 @@
          		<update>true</update>		    
 		         <server>maven-tomcat-war-deployment-server</server>
 		         <url>http://192.168.0.72/manager/text</url>
-		         <path>//${project.build.finalName}</path>
+		         <path>/${project.build.finalName}</path>
 	          </configuration>
            </plugin>                  
         </plugins>
